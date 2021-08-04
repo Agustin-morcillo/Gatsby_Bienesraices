@@ -7,6 +7,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^3.10.2",
+    "gatsby-background-image": "^1.5.3",
     "gatsby-plugin-gatsby-cloud": "^2.10.1",
     "gatsby-plugin-image": "^1.10.1",
     "gatsby-plugin-manifest": "^3.10.0",
@@ -15,6 +16,7 @@
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-plugin-styled-components": "^4.10.0",
     "gatsby-source-filesystem": "^3.10.0",
+    "gatsby-source-strapi": "^1.0.2",
     "gatsby-transformer-sharp": "^3.10.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
