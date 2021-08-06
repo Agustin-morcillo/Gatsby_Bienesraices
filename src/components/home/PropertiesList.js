@@ -2,23 +2,36 @@ import React, { useState, useEffect } from "react"
 
 import useProperties from "../../hooks/useProperties"
 
-import { List } from "./theme/PropertiesList-theme"
+import { Title, List } from "./theme/PropertiesList-theme"
 import PropertiePreview from "./PropertiePreview"
+import useFilter from "../../hooks/useFilter"
 
 export default function PropertiesList() {
-  const [properties, setProperties] = useState([])
   const propertiesList = useProperties()
 
+  const [properties] = useState(propertiesList)
+  const [filterResult, setFilterResult] = useState([])
+
+  const { category, FilterInput } = useFilter()
+
   useEffect(() => {
-    setProperties(propertiesList)
-  }, [])
+    if (category) {
+      const filter = properties.filter(
+        (propertie) => propertie.node.categories[0].name === category
+      )
+      return setFilterResult(filter)
+    }
+    return setFilterResult(properties)
+  }, [category])
 
   return (
     <div>
-      <h2>Nuestras propiedades</h2>
+      <Title>Nuestras propiedades</Title>
+
+      {FilterInput()}
 
       <List>
-        {properties.map((propertie) => (
+        {filterResult.map((propertie) => (
           <PropertiePreview
             key={propertie.node.id}
             propertie={propertie.node}

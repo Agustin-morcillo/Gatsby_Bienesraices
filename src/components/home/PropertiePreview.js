@@ -9,6 +9,8 @@ import Icons from "../layout/Icons"
 export default function PropertiePreview({ propertie }) {
   const { name, price, image, bathrooms, parking, rooms } = propertie
 
+  const propertieURL = name.split(" ").join("-")
+
   return (
     <article>
       <Card>
@@ -26,7 +28,7 @@ export default function PropertiePreview({ propertie }) {
             className="price"
           />
           <Icons bathrooms={bathrooms} parking={parking} rooms={rooms} />
-          <Button to={name.split(" ").join("-")}>Ver detalles</Button>
+          <Button to={"/" + propertieURL}>Ver detalles</Button>
         </Content>
       </Card>
     </article>

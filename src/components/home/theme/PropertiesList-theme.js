@@ -1,5 +1,11 @@
 import styled from "styled-components"
 
+export const Title = styled.h2`
+  margin-top: 4rem;
+  font-weight: 800;
+  font-size: 2.7rem;
+`
+
 export const List = styled.ul`
   max-width: 1200px;
   width: 95%;
