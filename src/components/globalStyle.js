@@ -37,12 +37,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
 
-    .contenedor {
-        max-width: 120rem;
-        margin: 0 auto;
-        width: 95%;
-    }
-
     img {
         max-width: 100%;
     }

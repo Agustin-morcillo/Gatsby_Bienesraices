@@ -26,6 +26,7 @@ export default function Layout(props) {
       </Helmet>
 
       <Header />
+
       {props.children}
     </>
   )

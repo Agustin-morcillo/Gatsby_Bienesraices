@@ -17,7 +17,7 @@ export default function PropertiesList() {
   useEffect(() => {
     if (category) {
       const filter = properties.filter(
-        (propertie) => propertie.node.categories[0].name === category
+        (propertie) => propertie.node.category.name === category
       )
       return setFilterResult(filter)
     }

@@ -22,7 +22,7 @@ export default function useProperties() {
                 }
               }
             }
-            categories {
+            category {
               name
             }
             agent {
