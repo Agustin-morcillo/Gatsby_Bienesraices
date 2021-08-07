@@ -5,35 +5,31 @@ import { useStaticQuery, graphql } from "gatsby"
 import { IconList } from "./theme/Icons-theme"
 
 export default function Icons({ bathrooms, parking, rooms }) {
-  const icons = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "icons" } }) {
         edges {
           node {
             id
             publicURL
+            name
           }
         }
       }
     }
   `)
-  const finalIcons = icons.allFile.edges
+  const icons = data.allFile.edges
+
   return (
     <IconList>
-      <li>
-        <img src={finalIcons[0].node.publicURL} alt="" />
-        <p>{bathrooms}</p>
-      </li>
-
-      <li>
-        <img src={finalIcons[1].node.publicURL} alt="" />
-        <p>{rooms}</p>
-      </li>
-
-      <li>
-        <img src={finalIcons[2].node.publicURL} alt="" />
-        <p>{parking}</p>
-      </li>
+      {icons.map((icon) => (
+        <li key={icon.node.id}>
+          <img src={icon.node.publicURL} alt={icon.node.name} />
+          {icon.node.name === "bathrooms" && <p>{bathrooms}</p>}
+          {icon.node.name === "parking" && <p>{parking}</p>}
+          {icon.node.name === "rooms" && <p>{rooms}</p>}
+        </li>
+      ))}
     </IconList>
   )
 }
