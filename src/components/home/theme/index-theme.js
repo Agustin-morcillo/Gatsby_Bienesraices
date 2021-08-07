@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
+import { BgImage } from "gbimage-bridge"
 
-export const Image = styled(BackgroundImage)`
+export const Image = styled(BgImage)`
   height: 600px;
 `
 

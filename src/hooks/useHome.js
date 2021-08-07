@@ -10,18 +10,12 @@ export default function useHome() {
             content
             image {
               localFile {
-                sharp: childImageSharp {
-                  fluid(
-                    quality: 90
-                    maxWidth: 1200
-                    duotone: {
-                      highlight: "#222222"
-                      shadow: "#192550"
-                      opacity: 40
-                    }
-                  ) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 2000
+                    quality: 50
+                    webpOptions: { quality: 70 }
+                  )
                 }
               }
             }

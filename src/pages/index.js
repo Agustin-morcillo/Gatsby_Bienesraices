@@ -1,4 +1,5 @@
 import * as React from "react"
+import { getImage } from "gatsby-plugin-image"
 
 import useHome from "../hooks/useHome"
 
@@ -13,18 +14,15 @@ import PropertiesList from "../components/home/PropertiesList"
 
 const IndexPage = () => {
   const home = useHome()
+
   const { name, content, image } = home
+  const imagePath = getImage(image.localFile)
 
   return (
     <Layout>
       <main>
         <section>
-          <Image
-            tag="section"
-            fluid={image.localFile.sharp.fluid}
-            alt="mansión"
-            fadeIn="soft"
-          >
+          <Image alt="mansión" image={imagePath}>
             <WelcomeText>
               <h1>Venta de casas, departamentos y mansiones</h1>
             </WelcomeText>
