@@ -24,7 +24,7 @@ export default function SectionImg() {
     <>
       <Image alt="habitación" image={imagePath}>
         <Text>
-          <h3>Enuentra la casa de tus sueños</h3>
+          <h3>Encuentra la casa de tus sueños</h3>
           <p>15 años de experiencia</p>
         </Text>
       </Image>

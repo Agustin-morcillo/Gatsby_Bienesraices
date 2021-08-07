@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
 import { Title, Card } from "../components/properties/theme/Propiedades-theme"
 import Layout from "../components/layout/Layout"
@@ -30,6 +30,7 @@ const Properties = () => {
   const data = query.allStrapiPages.edges[0].node
 
   const { name, content, image } = data
+  const imagePath = getImage(image.localFile)
 
   return (
     <Layout>
@@ -37,10 +38,7 @@ const Properties = () => {
         <section>
           <Title>{name}</Title>
           <Card>
-            <GatsbyImage
-              image={image.localFile.childImageSharp.gatsbyImageData}
-              alt={name}
-            />
+            <GatsbyImage image={imagePath} alt={name} />
             <p>{content}</p>
           </Card>
         </section>

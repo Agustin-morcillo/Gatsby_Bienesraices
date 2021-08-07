@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+export const Title = styled.h1`
+  font-weight: 900;
+`
+
 export const Card = styled.div`
   max-width: 1200px;
   margin: 0 auto;

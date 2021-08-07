@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import NumberFormat from "react-number-format"
 
-import { Card, Sidebar } from "./theme/PropertieDetails-theme"
+import { Title, Card, Sidebar } from "./theme/PropertieDetails-theme"
 import Layout from "../layout/Layout"
 import Icons from "../layout/Icons"
 
@@ -39,19 +39,17 @@ export default function PropertieDetails({ data }) {
   const main = data.allStrapiProperties.nodes[0]
   const { name, description, price, bathrooms, parking, rooms, image, agent } =
     main
+  const imagePath = getImage(image.localFile)
 
   return (
     <Layout>
       <main>
         <section>
           <article>
-            <h1>{name}</h1>
+            <Title>{name}</Title>
             <Card>
               <div>
-                <GatsbyImage
-                  image={image.localFile.childImageSharp.gatsbyImageData}
-                  alt={name}
-                />
+                <GatsbyImage image={imagePath} alt={name} />
                 <p>{description}</p>
               </div>
 

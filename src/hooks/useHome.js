@@ -15,6 +15,13 @@ export default function useHome() {
                     width: 2000
                     quality: 50
                     webpOptions: { quality: 70 }
+                    transformOptions: {
+                      duotone: {
+                        highlight: "#222222"
+                        shadow: "#192550"
+                        opacity: 40
+                      }
+                    }
                   )
                 }
               }
