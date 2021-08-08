@@ -1,20 +1,25 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
-import { AppFooter, GoToHome, Rights } from "./theme/Footer-theme"
+import usePageLogo from "../../hooks/usePageLogo"
+
+import { AppFooter, Rights } from "./theme/Footer-theme"
 import NavBar from "./NavBar"
 
 export default function Footer({ title }) {
+  const logo = usePageLogo()
   const year = new Date().getFullYear()
+
   return (
     <>
       <AppFooter>
         <div>
           <NavBar />
 
-          <GoToHome to="/">
-            <h1>BienesRaices</h1>
-          </GoToHome>
+          <Link to="/">
+            <img src={logo} alt="Logo de Bienes Raices" />
+          </Link>
         </div>
       </AppFooter>
       <Rights>

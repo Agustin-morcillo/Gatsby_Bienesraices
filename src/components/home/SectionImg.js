@@ -1,23 +1,12 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
+
+import homeSectionImgQuery from "../../queries/home/homeSectionImgQuery"
 
 import { Image, Text } from "./theme/SectionImg-theme"
 
 export default function SectionImg() {
-  const { image } = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "home-section.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 2000
-            quality: 50
-            webpOptions: { quality: 70 }
-          )
-        }
-      }
-    }
-  `)
+  const image = homeSectionImgQuery()
   const imagePath = getImage(image)
 
   return (

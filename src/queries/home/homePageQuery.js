@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export default function useHome() {
+export default function homePageQuery() {
   const result = useStaticQuery(graphql`
     query {
       allStrapiPages(filter: { name: { eq: "Inicio" } }) {

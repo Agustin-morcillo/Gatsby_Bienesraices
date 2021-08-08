@@ -2,7 +2,11 @@ import styled from "styled-components"
 import { BgImage } from "gbimage-bridge"
 
 export const Image = styled(BgImage)`
-  height: 600px;
+  height: 680px;
+
+  @media (max-width: 500px) {
+    height: 400px;
+  }
 `
 
 export const Container = styled.div`
@@ -13,6 +17,12 @@ export const Container = styled.div`
     font-weight: 900;
     margin-top: 30px;
     margin-bottom: 30px;
+  }
+
+  p {
+    @media (max-width: 768px) {
+      padding: 0 3rem;
+    }
   }
 `
 
@@ -31,7 +41,7 @@ export const WelcomeText = styled.div`
     font-weight: bold;
     margin: 0;
     max-width: 800px;
-    text-shadow: 20px 20px 20px 20px #000;
+    text-shadow: 30px 30px 30px 30px #000;
 
     @media (min-width: 992px) {
       font-size: 4rem;

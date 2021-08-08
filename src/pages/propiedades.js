@@ -1,35 +1,14 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
+
+import propiedadesPageQuery from "../queries/propiedades/propiedadesPageQuery"
 
 import { Title, Card } from "../components/properties/theme/Propiedades-theme"
 import Layout from "../components/layout/Layout"
 import PropertiesList from "../components/home/PropertiesList"
 
 const Properties = () => {
-  const query = useStaticQuery(graphql`
-    {
-      allStrapiPages(filter: { name: { eq: "Propiedades" } }) {
-        edges {
-          node {
-            id
-            name
-            content
-            image {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  const data = query.allStrapiPages.edges[0].node
-
-  const { name, content, image } = data
+  const { name, content, image } = propiedadesPageQuery()
   const imagePath = getImage(image.localFile)
 
   return (

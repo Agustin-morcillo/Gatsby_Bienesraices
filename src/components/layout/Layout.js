@@ -30,7 +30,7 @@ export default function Layout(props) {
 
       {props.children}
 
-      <Footer title="Bienes Raices" />
+      <Footer title="BIENESRAICES" />
     </>
   )
 }

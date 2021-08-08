@@ -1,7 +1,7 @@
 import * as React from "react"
 import { getImage } from "gatsby-plugin-image"
 
-import useHome from "../hooks/useHome"
+import homePageQuery from "../queries/home/homePageQuery"
 
 import {
   Container,
@@ -13,8 +13,7 @@ import SectionImg from "../components/home/SectionImg"
 import PropertiesList from "../components/home/PropertiesList"
 
 const IndexPage = () => {
-  const home = useHome()
-
+  const home = homePageQuery()
   const { name, content, image } = home
   const imagePath = getImage(image.localFile)
 

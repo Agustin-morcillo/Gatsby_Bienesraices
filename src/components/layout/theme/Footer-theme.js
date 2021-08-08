@@ -1,10 +1,9 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 export const AppFooter = styled.footer`
   background-color: #333;
   padding: 1rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
 
   div {
     max-width: 1200px;
@@ -16,12 +15,6 @@ export const AppFooter = styled.footer`
       justify-content: space-between;
     }
   }
-`
-
-export const GoToHome = styled(Link)`
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
 `
 
 export const Rights = styled.p`

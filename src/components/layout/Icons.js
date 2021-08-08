@@ -1,24 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+
+import useIcons from "../../hooks/useIcons"
 
 import { IconList } from "./theme/Icons-theme"
 
 export default function Icons({ bathrooms, parking, rooms }) {
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(filter: { relativeDirectory: { eq: "icons" } }) {
-        edges {
-          node {
-            id
-            publicURL
-            name
-          }
-        }
-      }
-    }
-  `)
-  const icons = data.allFile.edges
+  const icons = useIcons()
 
   return (
     <IconList>
