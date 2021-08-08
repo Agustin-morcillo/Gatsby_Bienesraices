@@ -18,7 +18,11 @@ export default function useProperties() {
             image {
               localFile {
                 childImageSharp {
-                  gatsbyImageData
+                  gatsbyImageData(
+                    width: 2000
+                    quality: 50
+                    webpOptions: { quality: 70 }
+                  )
                 }
               }
             }
