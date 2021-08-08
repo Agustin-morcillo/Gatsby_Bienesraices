@@ -2,7 +2,11 @@ import styled from "styled-components"
 import { BgImage } from "gbimage-bridge"
 
 export const Image = styled(BgImage)`
-  height: 300px;
+  height: 250px;
+
+  @media (max-width: 768px) {
+    height: 150px;
+  }
 `
 
 export const Text = styled.div`

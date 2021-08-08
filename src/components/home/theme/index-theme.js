@@ -7,6 +7,10 @@ export const Image = styled(BgImage)`
   @media (max-width: 768px) {
     height: 400px;
   }
+
+  @media (max-width: 480px) {
+    height: 250px;
+  }
 `
 
 export const Container = styled.div`
