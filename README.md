@@ -7,7 +7,7 @@
   Gatsby Bienes Raíces
 </h1>
 
-**Deployed**: [Gatsby Bienes Raíces](https://next-js-product-page.vercel.app/)
+**Deployed**: [Gatsby Bienes Raíces](https://gatsby-bienesraices.vercel.app/)
 
 A. **Español**
 
