@@ -2,6 +2,8 @@ import styled from "styled-components"
 
 export const Title = styled.h1`
   font-weight: 900;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `
 
 export const Card = styled.div`

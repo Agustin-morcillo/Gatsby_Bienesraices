@@ -8,6 +8,12 @@ export const Image = styled(BgImage)`
 export const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
+
+  h1 {
+    font-weight: 900;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 `
 
 export const WelcomeText = styled.div`

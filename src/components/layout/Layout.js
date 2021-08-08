@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 
 import GlobalStyle from "../globalStyle"
 import Header from "./Header"
+import Footer from "./Footer"
 
 export default function Layout(props) {
   return (
@@ -28,6 +29,8 @@ export default function Layout(props) {
       <Header />
 
       {props.children}
+
+      <Footer title="Bienes Raices" />
     </>
   )
 }
