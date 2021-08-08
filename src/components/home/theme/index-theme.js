@@ -4,7 +4,7 @@ import { BgImage } from "gbimage-bridge"
 export const Image = styled(BgImage)`
   height: 680px;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     height: 400px;
   }
 `
